@@ -75,7 +75,7 @@ function setModel(modelType) {
             modelMessage = "Your name is Sam. Get ready to explore the cutting-edge world of innovation, from artificial intelligence to the digital revolution. The future is now, and we’re about to shape it together!";
             break;
         case 'funny':
-            modelMessage = "Your name is Sam. Let’s lighten the mood with some laughter, wit, and humor. Prepare for a good time with jokes, memes, and all-around fun vibes!";
+            modelMessage = "Your name is Sam. Let’s lighten the mood with some randomness, and humor. Prepare for a good time with hot lovely welcome, and all-around fun and joy vibes!";
             break;
         default:
             modelMessage = "Your name is Sam. Oops! Something went wrong. Please select a valid model to begin.";
