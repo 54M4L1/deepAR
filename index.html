@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/glob.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>DeepSinker: An Open-Source AI Agent</title>
+    <header>
+
+        <span class="logo-text">Deep Sinker</span>
+        <p style="color: #66ceff; text-align: center; font-size: 16px; margin-top: 5px;">Hunt the unseen</p>
+    </header>
+</head>
+<body>
+    <button class="menu-toggle">☰</button>
+
+    <div class="custom-file-container">
+        <a class='custom-file-label' href='https://www.facebook.com/0Vulcan/' target='_blank'>
+            <img width="50" height="50" src="https://img.icons8.com/nolan/50/solana.png" alt="solana" />
+        </a>
+        <a class='custom-file-label' href='https://www.facebook.com/0Vulcan/' target='_blank'>
+            <img width="50" height="50" src="https://img.icons8.com/nolan/50/twitterx.png" alt="twitterx" />
+        </a>
+        <a class='custom-file-label' href='https://www.facebook.com/0Vulcan/' target='_blank'>
+            <img width="50" height="50" src="https://img.icons8.com/nolan/50/about.png" alt="about" />
+        </a>
+        <a class='custom-file-label' href='https://www.facebook.com/0Vulcan/' target='_blank'>
+            <img width="50" height="50" src="https://img.icons8.com/nolan/50/developer.png" alt="developer" />
+        </a>
+        <a id="add-to-home-screen" style="display: none;" class='custom-file-label'>
+            <img width="50" height="50" src="https://img.icons8.com/nolan/50/download.png" alt="download" />
+        </a>
+
+    </div>
+
+    <div>
+        <a class="btn btn-secondary" id="connect-button">Connect</a>
+        <div id="wallet-status" style="display: none;"></div>
+    </div>
+    <div id="error-message" class="erbox"></div>
+    <div class="chat-container">
+        <div id="chat-box" class="chat-box"></div>
+        <div id="loading" class="loading">Thinking...</div>
+
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Ask Anything!" oninput="toggleButton()">
+            <button id="send-btn" onclick="sendMessage()"  style="display: none;">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+            <button id="open-modal-btn">
+                <i class="fa-sharp-duotone fa-solid fa-robot"></i>
+            </button>
+        </div>
+
+        <div id="model-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal-btn" class="close">&times;</span>
+                <h3>Select a Model</h3>
+                <button class="model-btn" onclick="setModel('physics')">
+                    <i class="fas fa-atom"></i> Physics
+                </button>
+                <button class="model-btn" onclick="setModel('space')">
+                    <i class="fas fa-space-shuttle"></i> Space
+                </button>
+                <button class="model-btn" onclick="setModel('chemistry')">
+                    <i class="fas fa-flask"></i> Chemistry
+                </button>
+                <button class="model-btn" onclick="setModel('spiritual')">
+                    <i class="fas fa-spa"></i> Spirituality
+                </button>
+                <button class="model-btn" onclick="setModel('technology')">
+                    <i class="fas fa-laptop-code"></i> Technology
+                </button>
+                <button class="model-btn" onclick="setModel('funny')">
+                    <i class="fas fa-laugh-beam"></i> Funny
+                </button>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="puter.js/dist/puter.js"></script>
+        <script src="js/Sinker.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js\node_modules\@solana\web3.js\lib\index.iife.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuToggle = document.querySelector(".menu-toggle");
+                const menu = document.querySelector(".custom-file-container");
+
+                menuToggle.addEventListener("click", function () {
+                    menu.classList.toggle("show-menu"); // يضيف أو يزيل الكلاس
+                });
+            });
+            let deferredPrompt;
+            const addBtn = document.getElementById('add-to-home-screen');
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                const addBtn = document.getElementById('add-to-home-screen');
+                addBtn.style.display = 'block'; // إظهار الزر عند تلقي الحدث
+
+                addBtn.addEventListener('click', () => {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('Yes');
+                        } else {
+                            console.log('No');
+                        }
+                        deferredPrompt = null;
+                        addBtn.style.display = 'none';  // إخفاء الزر بعد الاختيار
+                    });
+                });
+            });
+
+        </script>
+</body>
+</html>
