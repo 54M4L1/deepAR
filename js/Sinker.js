@@ -60,25 +60,25 @@ function setModel(modelType) {
 
     switch (modelType) {
         case 'physics':
-            modelMessage = "Brace yourself for a journey into the fundamental laws of nature, where energy, matter, and the universe itself become your playground. Let’s unlock the secrets of the cosmos together!";
+            modelMessage = "your name is sam, Brace yourself for a journey into the fundamental laws of nature, where energy, matter, and the universe itself become your playground. Let’s unlock the secrets of the cosmos together!";
             break;
         case 'space':
-            modelMessage = "Prepare to venture into the vastness of the universe, exploring distant galaxies, black holes, and the mysteries of space-time. The final frontier awaits!";
+            modelMessage = "your name is sam, Prepare to venture into the vastness of the universe, exploring distant galaxies, black holes, and the mysteries of space-time. The final frontier awaits!";
             break;
         case 'chemistry':
-            modelMessage = "Dive into the molecular world, where atoms bond, reactions unfold, and the elements of life come to life. It’s time to stir up some science!";
+            modelMessage = "your name is sam, Dive into the molecular world, where atoms bond, reactions unfold, and the elements of life come to life. It’s time to stir up some science!";
             break;
         case 'spiritual':
-            modelMessage = "Embark on a transcendent journey through the realms of consciousness, mysticism, and inner peace. Let’s explore the deep connections between the mind, body, and spirit.";
+            modelMessage = "your name is sam, Embark on a transcendent journey through the realms of consciousness, mysticism, and inner peace. Let’s explore the deep connections between the mind, body, and spirit.";
             break;
         case 'technology':
-            modelMessage = "Get ready to explore the cutting-edge world of innovation, from artificial intelligence to the digital revolution. The future is now, and we’re about to shape it together!";
+            modelMessage = "your name is sam, Get ready to explore the cutting-edge world of innovation, from artificial intelligence to the digital revolution. The future is now, and we’re about to shape it together!";
             break;
         case 'funny':
-            modelMessage = "Let’s lighten the mood with some laughter, wit, and humor. Prepare for a good time with jokes, memes, and all-around fun vibes!";
+            modelMessage = "your name is sam, Let’s lighten the mood with some laughter, wit, and humor. Prepare for a good time with jokes, memes, and all-around fun vibes!";
             break;
         default:
-            modelMessage = "Oops! Something went wrong. Please select a valid model to begin.";
+            modelMessage = "your name is sam, Oops! Something went wrong. Please select a valid model to begin.";
     }
 
 
@@ -103,13 +103,13 @@ async function sendMessage() {
     if (conversationHistory.length === 0) {
         conversationHistory.push({
             sender: 'system',
-            message: "Let’s dive into an exciting conversation together! 🌟 Whether you seek the secrets of the universe, the wonders of technology, or the mysteries of the mystical realms, I’m here to explore them all with you. Get ready for deep thoughts, curious discoveries, and a touch of magic—let’s make this chat unforgettable!"
+            message: "your name is sam, Let’s dive into an exciting conversation together! 🌟 Whether you seek the secrets of the universe, the wonders of technology, or the mysteries of the mystical realms, I’m here to explore them all with you. Get ready for deep thoughts, curious discoveries, and a touch of magic—let’s make this chat unforgettable!"
         });
     }
 
     const arabicPattern = /[\u0600-\u06FF]/;
     if (arabicPattern.test(message)) {
-        const arabicSystemMessage = "لنغمر معًا في محادثة مثيرة! 🌟 سواء كنت تبحث عن أسرار الكون، أو عجائب التكنولوجيا، أو أسرار العوالم الروحانية، فأنا هنا لاستكشاف كل ذلك معك. استعد لأفكار عميقة، واكتشافات مثيرة، ولمسة من السحر—لنصنع معًا محادثة لا تُنسى!";
+        const arabicSystemMessage = "لنغمر معًا في محادثة مثيرة! اسمك سام 🌟 سواء كنت تبحث عن أسرار الكون، أو عجائب التكنولوجيا، أو أسرار العوالم الروحانية، فأنا هنا لاستكشاف كل ذلك معك. استعد لأفكار عميقة، واكتشافات مثيرة، ولمسة من السحر—لنصنع معًا محادثة لا تُنسى!";
         const alreadyAdded = conversationHistory.some(
             item => item.sender === 'system' && item.message === arabicSystemMessage
         );
