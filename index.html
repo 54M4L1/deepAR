@@ -96,28 +96,31 @@
         <script src="puter.js/dist/puter.js"></script>
         <script src="js/Sinker.js"></script>
         <script>
-            let deferredPrompt;
-            const addBtn = document.getElementById('add-to-home-screen');
+           let deferredPrompt;
+const addBtn = document.getElementById('add-to-home-screen');
 
-            window.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                deferredPrompt = e;
-                const addBtn = document.getElementById('add-to-home-screen');
-                addBtn.style.display = 'block'; // إظهار الزر عند تلقي الحدث
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    addBtn.style.display = 'block'; // إظهار الزر عند توفر الحدث
 
-                addBtn.addEventListener('click', () => {
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then((choiceResult) => {
-                        if (choiceResult.outcome === 'accepted') {
-                            console.log('Yes');
-                        } else {
-                            console.log('No');
-                        }
-                        deferredPrompt = null;
-                        addBtn.style.display = 'none';  // إخفاء الزر بعد الاختيار
-                    });
-                });
-            });
+    addBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+
+            if (outcome === 'accepted') {
+                console.log('تمت الموافقة على التثبيت 🎉');
+            } else {
+                console.log('تم رفض التثبيت ❌');
+            }
+            
+            deferredPrompt = null;
+            addBtn.style.display = 'none'; // إخفاء الزر بعد التفاعل
+        }
+    });
+});
+
 
         </script>
 </body>
