@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
     var e = {
         330: e => {
             class t extends HTMLElement {
@@ -10,115 +10,118 @@
                         this.reject = t,
                         this.resolve = e,
                         this.shadowRoot.innerHTML = `
-    <style>
-        dialog {
-            background:rgb(26 26 26);
-            border: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            outline: none;
-            padding: 20px; 
-            border-radius: 8px; 
-        }
-        .puter-dialog-content {
-            padding: 20px;
-            color: #e0e0e0;
-            position: relative;
-        }
-        dialog * {
-            max-width: 500px;
-            font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
-        }
-        dialog p.about {
-            text-align: center;
-            font-size: 16px;
-            padding: 10px 0;
-            color: #d1d1d1;
-        }
+<style>
+    dialog {
+        background: rgb(26 26 26);
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .puter-dialog-content {
+        color: #e0e0e0;
+    }
+
+    dialog * {
+        font-family: Arial, sans-serif;
+    }
+
+    dialog p.about {
+        text-align: center;
+        font-size: 16px;
+        color: #d1d1d1;
+        margin: 10px 0;
+    }
+
+    dialog .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    dialog .close-btn {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 17px;
+        color: #d1d1d1;
+        cursor: pointer;
+    }
+
+    dialog .close-btn:hover {
+        color: #ffffff;
+    }
+
+    dialog .button {
+        color: #ffffff;
+        background-color: #333333;
+        border: 1px solid #555;
+        font-size: 14px;
+        height: 35px;
+        padding: 0 30px;
+        margin: 0 5px;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    dialog .button:hover {
+        background-color: #444;
+    }
+
+    dialog .button-primary {
+        background-color: #088ef0;
+        border-color: #088ef0;
+    }
+
+    dialog .button-primary:hover {
+        background-color: #2798eb;
+    }
+
+    dialog a {
+        color: rgb(0, 69, 238);
+        text-decoration: none;
+    }
+
+    dialog a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
         dialog .buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            text-align: center;
-            margin-bottom: 20px;
+            flex-direction: column;
         }
-        dialog .close-btn {
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            font-size: 17px;
-            color: #d1d1d1;
-            cursor: pointer;
-        }
-        dialog .close-btn:hover {
-            color: #ffffff;
-        }
-        dialog .button {
-                color: #ffffff;
-    background-color: #333333;
-    border: 1px solid #555;
-    font-size: 14px;
-    text-decoration: none;
-    text-align: center;
-    line-height: 40px;
-    text-box: auto;
-    height: 35px;
-    padding: 0 30px;
-    margin: 0 5px;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 4px;
-    outline: none;
-        }
-        dialog .button:hover {
-            background-color: #444;
-        }
-        dialog .button-primary {
-            border-color: #088ef0;
-            background-color: #088ef0;
-            color: white;
-        }
-        dialog .button-primary:hover {
-            background-color: #2798eb;
-        }
-        dialog .button-auth {
-            margin-bottom: 10px;
-        }
-        dialog a, dialog a:visited {
-            color: rgb(0 69 238);
-            text-decoration: none;
-        }
-        dialog a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width:480px) {
-            dialog .buttons {
-                flex-direction: column-reverse;
-            }
-            dialog .button-auth {
-                width: 100% !important;
-                margin: 0 !important;
-                margin-bottom: 10px !important;
-            }
-        }
-    </style>
-    <dialog>
-        <div class="puter-dialog-content">
-            <span class="close-btn">&#x2715</span>
-<a style="display: block; padding-right: 5px; width: 100px; height: 70px; filter: drop-shadow(0px 0px 3px cyan); margin: 0 auto; border-radius: 4px; transform: scale(4);">
-    <img src="https://i.imgur.com/FBbU5Z1.png" alt="Puter Logo" style="width: 100%; height: 100%; border-radius: 4px;" />
+    }
+</style>
+
+<dialog>
+    <div class="puter-dialog-content">
+        <span class="close-btn">&#x2715;</span>
+<a style="display: flex; justify-content: center; align-items: center; color: white; font-size: 30px; font-weight: bold; text-align: center; width: 100%; height: 70px; border-radius: 4px; text-decoration: none;">
+    DeepSinker
 </a>
-            </a>
-            <p class="about">This website uses Sinker to bring you safe, secure, and private AI features.</p>
-            <div class="buttons">
-                <button class="button button-auth" id="launch-auth-popup-cancel">Cancel</button>
-                <button class="button button-primary button-auth" id="launch-auth-popup">Continue</button>
-            </div>
-            <p style="text-align: center; margin-top: -15px; font-size: 14px;">Powered by <a href="https://docs.puter.com/" target="_blank">Sinker.js</a></p>
-            <p class="launch-auth-popup-footnote">By clicking 'Continue' you agree to DeepSinker's <a href="https://puter.com/terms" target="_blank">Terms of Service</a> and <a href="https://puter.com/privacy" target="_blank">Privacy Policy</a>.</p>
+
+
+        <p class="about">يستخدم هذا الموقع (Sinker من Sam) لتوفير ميزات الذكاء الاصطناعي بأمان وخصوصية.</p>
+        <div class="buttons">
+            <button class="button" id="launch-auth-popup-cancel">تراجع</button>
+            <button class="button button-primary" id="launch-auth-popup">استمرار</button>
         </div>
-    </dialog>
+        <p style="text-align: center; font-size: 14px;">مدعوم بواسطة
+            <a href="https://cdn.jsdelivr.net/gh/54M4L1/SinkerJS@main/" target="_blank">Sinker.js</a>
+        </p>
+        <p class="launch-auth-popup-footnote" style="text-align: center;">
+            بالنقر على "استمرار"، فإنك توافق على
+            <a href="https://puter.com/terms" target="_blank">شروط الخدمة</a>
+            و <a href="https://puter.com/privacy" target="_blank">سياسة الخصوصية</a> الخاصة بـ DeepSinker.
+        </p>
+    </div>
+</dialog>
+
+
 `;                        this.messageListener = async e => {
                             "puter.token" === e.data.msg && (this.close(),
                                 puter.setAuthToken(e.data.token),
@@ -135,33 +138,36 @@
                                     puter.puterAuthState.resolver = null))
                         }
                 }
-                cancelListener = () => {
-                    this.close(),
-                        window.removeEventListener("message", this.messageListener),
-                        puter.puterAuthState.authGranted = !1,
-                        puter.puterAuthState.isPromptOpen = !1,
-                        this.reject(new Error("User cancelled the authentication")),
-                        puter.puterAuthState.resolver && (puter.puterAuthState.resolver.reject(new Error("User cancelled the authentication")),
-                            puter.puterAuthState.resolver = null)
-                }
-                    ;
                 connectedCallback() {
-                    this.shadowRoot.querySelector("#launch-auth-popup").addEventListener("click", (() => {
-                        var e = screen.width / 2 - 300
-                            , t = screen.height / 2 - 200;
-                        window.open(puter.defaultGUIOrigin + "/?embedded_in_popup=true&request_auth=true", "Puter", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=400, top=" + t + ", left=" + e)
-                    }
-                    )),
-                        window.addEventListener("message", this.messageListener),
-                        this.shadowRoot.querySelector("#launch-auth-popup-cancel").addEventListener("click", this.cancelListener),
-                        this.shadowRoot.querySelector(".close-btn").addEventListener("click", this.cancelListener)
+                    this.shadowRoot.querySelector("#launch-auth-popup").addEventListener("click", () => {
+                        var e = screen.width / 2 - 300,
+                            t = screen.height / 2 - 200;
+
+                        // فتح النافذة المنبثقة
+                        const authWindow = window.open(puter.defaultGUIOrigin + "/?embedded_in_popup=true&request_auth=true", "Puter", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=400, top=" + t + ", left=" + e);
+
+                        // إرسال رسالة إلى النافذة المنبثقة
+                        if (authWindow) {
+                            authWindow.onload = () => {
+                                authWindow.postMessage("يرجى الإنتظار قليلاً.", "*");
+                            };
+                        }
+                    });
+
+                    window.addEventListener("message", this.messageListener);
+                    this.shadowRoot.querySelector("#launch-auth-popup-cancel").addEventListener("click", this.cancelListener);
+                    this.shadowRoot.querySelector(".close-btn").addEventListener("click", this.cancelListener);
                 }
+
                 open() {
-                    this.shadowRoot.querySelector("dialog").showModal()
+                    this.shadowRoot.querySelector("dialog").showModal();
                 }
+
                 close() {
-                    this.shadowRoot.querySelector("dialog").close()
+                    this.shadowRoot.querySelector("dialog").close();
                 }
+
+
             }
             customElements.define("puter-dialog", t),
                 e.exports = t

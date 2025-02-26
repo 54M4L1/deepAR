@@ -61,19 +61,20 @@ header {
 
 .chat-container {
     width: 100%;
-    max-width: 600px;
+    height: 100%;
     position: absolute;
-    margin: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: #00000078;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    height: -webkit-fill-available;
     z-index: 1;
-    border: 1px solid transparent;
-    border-image: linear-gradient(to top, #66ceff, #5981b6, #2bb9ff) 1;
 }
+
 
 .chat-box {
     flex: 1;
@@ -133,6 +134,7 @@ header {
     background-color: #3c3c3c;
     border: 1px solid #ff000000;
     color: #ffffff;
+    text-align:right;
     border-radius: 4px;
     margin-right: 10px;
 }
@@ -365,18 +367,19 @@ header {
         display: flex;
         height: 60px;
         padding: 10px;
-        margin-bottom: 20px;
         color: #00abff;
         background-color: #191a1a;
     }
     #user-input {
         flex: 1;
-        padding: 30px;
+        padding: 20px;
         background-color: #3c3c3c;
         border: 1px solid #ff000000;
         color: #ffffff;
         border-radius: 4px;
         margin-left: 1px;
+        text-align: right;
+        height:10px;
     }
     .custom-file-container {
         position: fixed;
@@ -436,5 +439,14 @@ header {
     #add-to-home-screen {
         display: block !important; /* إظهار الزر فقط على الهواتف */
     }
-}
+    .modal-content {
+        background-color: #2a2a2aa8;
+        color: white;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 75%;
+        max-width: 300px;
+        border-radius: 10px;
+    }
 }
