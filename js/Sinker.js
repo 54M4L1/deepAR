@@ -127,7 +127,7 @@ async function sendMessage() {
         }
     }
 
-    conversationHistory.push({ sender: 'user', message }, { model: 'gpt-4o', stream: true });
+    conversationHistory.push({ sender: 'user', message }, { model: 'grok-beta', stream: true });
 
     appendMessage('user-message', message);
     userInput.value = '';
