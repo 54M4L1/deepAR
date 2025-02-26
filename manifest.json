@@ -1,7 +1,7 @@
 {
   "name": "Deep Sinker AI agent",
   "short_name": "DeepSinker",
-  "start_url": "#",      
+  "start_url": "/index.html",      
   "description": "DeepSinker by Sam",
   "display": "standalone",
   "background_color": "white",
