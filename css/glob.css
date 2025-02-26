@@ -288,15 +288,21 @@ header {
 
 .modal-content {
     background-color: #2a2a2aa8;
+    display: grid;
+    text-align:center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     color: white;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 20%;
-    max-width: 300px;
+    max-width: 70%;
+    font-family: 'cairo';
+    font-size: 16px;
     border-radius: 10px;
 }
-
+    .modal-content h3 {
+        text-align: center; /* توسيط العنوان */
+    }
 /* زر إغلاق النافذة */
 .close {
     color: #aaa;
@@ -319,12 +325,23 @@ header {
 .model-btn {
     background: linear-gradient(0deg, #2067dd, #ff00a5);
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    margin: 5px 0;
+    font-family: 'cairo';
+    border-radius: 8px;
+    margin: 5px;
     cursor: pointer;
+    padding: initial;
+    width: 150px;
+    height: 75px;
+    display: grid;
+    flex-direction: unset;
+    align-items: anchor-center;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    transition: transform 0.2sease, box-shadow 0.2sease;
 }
+
 
     .model-btn:hover {
         background: linear-gradient(180deg, #2067dd, #ff00a5);
@@ -441,12 +458,14 @@ header {
     }
     .modal-content {
         background-color: #2a2a2aa8;
+        font-family: 'cairo';
         color: white;
         margin: 5% auto;
         padding: 20px;
+        gap: 3px;
         border: 1px solid #888;
         width: 75%;
-        max-width: 300px;
+        max-width: 400px;
         border-radius: 10px;
     }
 }

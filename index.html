@@ -24,7 +24,12 @@
 </head>
 <body>
 
+    <div class="custom-file-container">
+        <a id="add-to-home-screen" class='custom-file-label'>
+            <img width="50" height="50" src="https://img.icons8.com/nolan/50/download.png" alt="download" />
+        </a>
 
+    </div>
     </div>
     </div>
     <div id="error-message" class="erbox"></div>
@@ -33,8 +38,8 @@
         <div id="loading" class="loading">...لحظة من فضلك</div>
 
         <div class="input-container">
-            <input type="text" id="user-input" placeholder="اسأل أي شيء (مثل: دعنا نتحدث عن الفيزياء الكمومية)" oninput="toggleButton()">
-            <button id="send-btn" onclick="sendMessage()"  style="display: none;">
+            <input type="text" id="user-input" placeholder="إكتب أي شيء... (مثل: دعنا نتحدث عن الفيزياء الكمومية)" oninput="toggleButton()">
+            <button id="send-btn" onclick="sendMessage()" style="display: none;">
                 <i class="fa-solid fa-arrow-up"></i>
             </button>
             <button id="open-modal-btn">
@@ -46,6 +51,7 @@
             <div class="modal-content">
                 <span id="close-modal-btn" class="close">&times;</span>
                 <h3>حدد نوع النموذج</h3>
+
                 <button class="model-btn" onclick="setModel('physics')">
                     <i class="fas fa-atom"></i> فيزياء
                 </button>
@@ -64,7 +70,24 @@
                 <button class="model-btn" onclick="setModel('funny')">
                     <i class="fas fa-laugh-beam"></i> دردشة
                 </button>
+                <!-- الخيارات الجديدة -->
+                <button class="model-btn" onclick="setModel('history')">
+                    <i class="fas fa-landmark"></i> تاريخ
+                </button>
+                <button class="model-btn" onclick="setModel('biology')">
+                    <i class="fas fa-dna"></i> علم الأحياء
+                </button>
+                <button class="model-btn" onclick="setModel('art')">
+                    <i class="fas fa-palette"></i> فن
+                </button>
+                <button class="model-btn" onclick="setModel('music')">
+                    <i class="fas fa-music"></i> موسيقى
+                </button>
+                <button class="model-btn" onclick="setModel('literature')">
+                    <i class="fas fa-book-open"></i> أدب
+                </button>
             </div>
+        </div>
         </div>
 
 

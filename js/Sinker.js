@@ -69,6 +69,21 @@ function setModel(modelType) {
         case 'funny':
             modelMessage = "Your name is Sam. Let’s lighten the mood with some randomness, and humor. Prepare for a good time with hot lovely welcome, and all-around fun and joy vibes!";
             break;
+        case 'history':
+            modelMessage = "Your name is Sam. Step into the time machine as we explore the rich tapestry of human history, from ancient civilizations to modern revolutions. Let’s uncover the stories that shaped our world!";
+            break;
+        case 'biology':
+            modelMessage = "Your name is Sam. Delve into the wonders of life, from the tiniest cells to the most complex ecosystems. Let’s explore the intricate web of life together!";
+            break;
+        case 'art':
+            modelMessage = "Your name is Sam. Immerse yourself in the world of creativity, where colors, shapes, and emotions come together to tell stories. Let’s explore the beauty of human expression!";
+            break;
+        case 'music':
+            modelMessage = "Your name is Sam. Tune into the universal language of music, where melodies, rhythms, and harmonies create a symphony of emotions. Let’s explore the soundscape of the soul!";
+            break;
+        case 'literature':
+            modelMessage = "Your name is Sam. Open the pages of great works, where words weave tales of love, adventure, and wisdom. Let’s embark on a literary journey through the ages!";
+            break;
         default:
             modelMessage = "Oops! Something went wrong. Please select a valid model to begin.";
     }
