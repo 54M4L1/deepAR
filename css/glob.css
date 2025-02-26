@@ -289,63 +289,64 @@ header {
 .modal-content {
     background-color: #2a2a2aa8;
     display: grid;
-    text-align:center;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* تصغير الأعمدة */
     color: white;
     margin: 5% auto;
-    padding: 20px;
+    padding: 15px; /* تقليل التباعد الداخلي */
     border: 1px solid #888;
-    max-width: 70%;
-    font-family: 'cairo';
-    font-size: 16px;
+    max-width: 50%; /* تصغير عرض الصندوق */
+    font-family: 'Cairo';
+    font-size: 14px; /* تصغير النص داخل النافذة */
     border-radius: 10px;
 }
-    .modal-content h3 {
-        text-align: center; /* توسيط العنوان */
-    }
+
+.modal-content h3 {
+    text-align: center;
+}
+
 /* زر إغلاق النافذة */
 .close {
     color: #aaa;
-    font-size: 28px;
+    font-size: 24px; /* تقليل الحجم */
     font-weight: bold;
     position: absolute;
-    top: 10px;
-    right: 25px;
+    top: 8px;
+    right: 20px;
     transition: 0.3s;
 }
 
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* تنسيق الأزرار داخل النافذة المنبثقة */
 .model-btn {
     background: linear-gradient(0deg, #2067dd, #ff00a5);
     color: white;
     border: none;
-    font-family: 'cairo';
-    border-radius: 8px;
-    margin: 5px;
+    font-family: 'Cairo';
+    border-radius: 6px;
+    margin: 4px;
     cursor: pointer;
-    padding: initial;
-    width: 150px;
-    height: 75px;
-    display: grid;
-    flex-direction: unset;
-    align-items: anchor-center;
-    justify-content: center;
-    font-size: 16px;
+    padding: 10px; /* ضبط التباعد الداخلي */
+    width: 120px; /* تصغير العرض */
+    height: 50px; /* تصغير الارتفاع */
+    display: flex; /* تحسين التوزيع */
+    align-items: center; /* توسيط العناصر عموديًا */
+    justify-content: center; /* توسيط العناصر أفقيًا */
+    font-size: 14px; /* تصغير النص داخل الأزرار */
     text-align: center;
-    transition: transform 0.2sease, box-shadow 0.2sease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.model-btn:hover {
+    background: linear-gradient(180deg, #2067dd, #ff00a5);
+}
 
-    .model-btn:hover {
-        background: linear-gradient(180deg, #2067dd, #ff00a5);
-    }
 
 
 
