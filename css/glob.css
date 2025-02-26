@@ -426,37 +426,10 @@ header {
         height: 50px;
     }
 
-    /* زر القائمة (☰) */
-    .menu-toggle {
-        visibility: visible;
-        opacity: 1;
-        display: block;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background-color: #ffffff26;
-        color: white;
-        cursor: pointer;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        border: none;
-        z-index: 999;
-    }
-
-    /* عند تفعيل القائمة */
-    .show-menu {
-        display: flex !important;
-    }
-
     .btn-secondary {
         display: none;
     }
 
-    #add-to-home-screen {
-        display: block !important; /* إظهار الزر فقط على الهواتف */
-    }
        .modal-content {
         background-color: #2a2a2aa8;
         font-family: 'Cairo';
