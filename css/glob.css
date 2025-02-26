@@ -457,16 +457,27 @@ header {
     #add-to-home-screen {
         display: block !important; /* إظهار الزر فقط على الهواتف */
     }
-    .modal-content {
+   .modal-content {
         background-color: #2a2a2aa8;
-        font-family: 'cairo';
+        font-family: 'Cairo';
         color: white;
         margin: 5% auto;
-        padding: 20px;
+        padding: 10px; /* تقليل التباعد الداخلي */
         gap: 3px;
         border: 1px solid #888;
-        width: 70%;
-        max-width: 400px;
+        width: 90%; /* تمدد النافذة بعض الشيء لتناسب الشاشات الصغيرة */
+        max-width: 300px; /* تصغير العرض */
         border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* الحفاظ على الترتيب الأفقي */
+        justify-content: center;
+    }
+
+    .model-btn {
+        width: 80px; /* تصغير عرض الأزرار */
+        height: 40px; /* تقليل ارتفاع الأزرار */
+        font-size: 12px; /* تصغير الخط داخل الأزرار */
+        padding: 5px; /* ضبط التباعد الداخلي */
+        border-radius: 5px; /* تقليل الحواف */
     }
 }
