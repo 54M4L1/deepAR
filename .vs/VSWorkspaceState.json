@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css"
+    "\\css",
+    "\\js"
   ],
-  "SelectedNode": "\\css\\glob.css",
+  "SelectedNode": "\\js\\Sinker.js",
   "PreviewInSolutionExplorer": false
 }
