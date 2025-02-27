@@ -404,27 +404,33 @@ header {
         display: none;
     }
 
-       .modal-content {
-        background-color: #2a2a2aa8;
-        font-family: 'Cairo';
-        color: white;
-        margin: 5% auto;
-        font-size: 10px;
-        padding: 10px;
-        gap: 3px;
-        border: 1px solid #888;
-        width: 90%;
-        max-width: 300px;
-        border-radius: 10px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        justify-content: center;
+.modal-content {
+    background-color: #161616cc;
+    font-family: "Orbitron", serif;
+    color: white;
+    margin: 5% auto;
+    font-size: 10px;
+    padding: 10px;
+    gap: 3px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 300px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    justify-content: center;
+}
 
-    .model-btn {
-        width: 80px; /* تصغير عرض الأزرار */
-        height: 40px; /* تقليل ارتفاع الأزرار */
-        font-size: 12px; /* تصغير الخط داخل الأزرار */
-        padding: 5px; /* ضبط التباعد الداخلي */
-        border-radius: 5px; /* تقليل الحواف */
-    }
+.model-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 10px; 
+    padding: 5px;
+    border-radius: 5px; 
+    background: padding-box;
+}
+    .model-btn:active {
+        background: linear-gradient(180deg, #2067dd, #ff00a5);
+
+       }
 }
