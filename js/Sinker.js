@@ -144,7 +144,7 @@ async function sendMessage() {
         appendMessage('bot-message', formattedResponse);
     } catch (error) {
         console.error('Error:', error);
-        showError('لا يمكنك الوصول إلى خدماتنا قبل الموافقة على شروط الاستخدام.');
+        showError('يبدو أن هناك مشكلة في الاتصال, حاول مرة أخرى مجدداً أو أعد تحميل الصفحة.');
     } finally {
         sendBtn.disabled = false;
         loading.classList.remove('show');
