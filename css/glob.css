@@ -286,8 +286,9 @@ header {
     padding-top: 60px;
 }
 
+
 .modal-content {
-    background-color: #2a2a2aa8;
+    background-color: #161616cc;
     display: grid;
     text-align: center;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* تصغير الأعمدة */
@@ -295,7 +296,7 @@ header {
     margin: 5% auto;
     padding: 15px; /* تقليل التباعد الداخلي */
     border: 1px solid #888;
-    max-width: 50%; /* تصغير عرض الصندوق */
+    max-width: 30%; /* تصغير عرض الصندوق */
     font-family: 'Cairo';
     font-size: 14px; /* تصغير النص داخل النافذة */
     border-radius: 10px;
@@ -303,6 +304,8 @@ header {
 
 .modal-content h3 {
     text-align: center;
+        font-family: 'Cairo';
+
 }
 
 /* زر إغلاق النافذة */
@@ -325,7 +328,7 @@ header {
 
 /* تنسيق الأزرار داخل النافذة المنبثقة */
 .model-btn {
-    background: linear-gradient(0deg, #2067dd, #ff00a5);
+    background: padding-box;
     color: white;
     border: none;
     font-family: 'Cairo';
@@ -335,7 +338,7 @@ header {
     padding: 10px; /* ضبط التباعد الداخلي */
     width: 120px; /* تصغير العرض */
     height: 50px; /* تصغير الارتفاع */
-    display: flex; /* تحسين التوزيع */
+    display: grid; /* تحسين التوزيع */
     align-items: center; /* توسيط العناصر عموديًا */
     justify-content: center; /* توسيط العناصر أفقيًا */
     font-size: 14px; /* تصغير النص داخل الأزرار */
@@ -343,9 +346,9 @@ header {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.model-btn:hover {
-    background: linear-gradient(180deg, #2067dd, #ff00a5);
-}
+    .model-btn:hover {
+        background: linear-gradient(180deg, #2067dd, #ff00a5);
+    }
 
 
 
@@ -406,7 +409,7 @@ header {
 
 .modal-content {
     background-color: #161616cc;
-    font-family: "Orbitron", serif;
+    font-family: 'Cairo';
     color: white;
     margin: 5% auto;
     font-size: 10px;
