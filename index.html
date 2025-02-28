@@ -96,6 +96,22 @@
         <script src="puter.js/dist/puter.js"></script>
         <script src="js/Sinker.js"></script>
   <script>
+          document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
+        
+        
+        
+        
+        document.addEventListener("keydown", function(event) {
+    if (event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || 
+        (event.ctrlKey && event.key === "U")) {
+        event.preventDefault();
+    }
+});
+
+    
    console.log("%cHello, creepy nosy stranger! ", 
     "font-size: 40px; color: crimson; font-family: 'Courier New'; background: black; text-shadow: 0 0 20px red, 0 0 30px darkred, 0 0 40px crimson;");
               
