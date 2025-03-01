@@ -120,6 +120,7 @@ console.log("%cWhat Are you doing here? ",
 </script>
         <script>
       let deferredPrompt;
+let deferredPrompt;
 const addBtn = document.getElementById('add-to-home-screen');
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -130,7 +131,34 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addBtn.addEventListener('click', async () => {
         // تحقق من النظام iOS
         if (navigator.userAgent.includes('iPhone') && !window.matchMedia('(display-mode: standalone)').matches) {
-            alert("أنت تستخدم هاتف آيفون, لتحميل تطبيق DeepSinker، اضغط زر المشاركة ↑ ثم اختر 'Add to Home Screen'.");
+            // إظهار نافذة منبثقة مع تعليمات واضحة تتضمن صورة رمز المشاركة
+            const instructions = `
+                <h3>كيفية تحميل تطبيق DeepSinker على آيفون:</h3>
+                <ol>
+                    <li>اضغط على زر <strong>المشاركة</strong> في أسفل الشاشة. </li>
+                    <li>مثل هذا الرمز: <img src="iosbtn.webp" alt="رمز المشاركة" style="max-width: 50px; height: auto; vertical-align: middle;"> </li>
+                    <li>ثم اختر <strong>'Add to Home Screen'</strong> من القائمة .</li>
+                </ol>
+                <p>تمتع بتجربة استخدام أسرع وأكثر سلاسة!</p>
+            `;
+            
+            // عرض التعليمات في نافذة منبثقة أو داخل عنصر مخصص
+            const instructionsDiv = document.createElement('div');
+            instructionsDiv.style.position = 'fixed';
+            instructionsDiv.style.top = '20%';
+            instructionsDiv.style.left = '10%';
+            instructionsDiv.style.backgroundColor = '#fff';
+            instructionsDiv.style.padding = '20px';
+            instructionsDiv.style.borderRadius = '8px';
+            instructionsDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+            instructionsDiv.innerHTML = instructions;
+
+            document.body.appendChild(instructionsDiv);
+
+            // إغلاق النافذة بعد مدة معينة
+            setTimeout(() => {
+                document.body.removeChild(instructionsDiv);
+            }, 10000); // إغلاق النافذة بعد 10 ثوانٍ
         }
 
         if (deferredPrompt) {
@@ -148,6 +176,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
         }
     });
 });
+
 
 
 
