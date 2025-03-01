@@ -119,8 +119,7 @@ console.log("%cWhat Are you doing here? ",
         
 </script>
         <script>
-      let deferredPrompt;
-let deferredPrompt;
+   let deferredPrompt; // تعريف المتغير مرة واحدة فقط
 const addBtn = document.getElementById('add-to-home-screen');
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -176,6 +175,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
         }
     });
 });
+
 
 
 
