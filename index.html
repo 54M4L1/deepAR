@@ -130,7 +130,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addBtn.addEventListener('click', async () => {
         // تحقق من النظام iOS
         if (navigator.userAgent.includes('iPhone') && !window.matchMedia('(display-mode: standalone)').matches) {
-            alert("لتحميل التطبيق، افتح قائمة المشاركة في Safari واختر 'Add to Home Screen'.");
+            alert("أنت تستخدم هاتف آيفون, لتحميل تطبيق DeepSinker، افتح قائمة المشاركة في Safari واختر 'Add to Home Screen'.");
         }
 
         if (deferredPrompt) {
