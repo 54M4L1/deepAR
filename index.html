@@ -135,7 +135,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
                 <h3>كيفية تحميل تطبيق DeepSinker على آيفون:</h3>
                 <ol>
                     <li>اضغط على زر <strong>المشاركة</strong> في أسفل الشاشة. </li>
-                    <li>مثل هذا الرمز: <img src="iosbtn.webp" alt="رمز المشاركة" style="max-width: 50px; height: auto; vertical-align: middle;"> </li>
+                    <li> <img src="iosbtn.webp" alt="رمز المشاركة" style="max-width: 50px; height: auto; vertical-align: middle;"> </li>
                     <li>ثم اختر <strong>'Add to Home Screen'</strong> من القائمة .</li>
                 </ol>
                 <p>تمتع بتجربة استخدام أسرع وأكثر سلاسة!</p>
@@ -145,11 +145,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
             const instructionsDiv = document.createElement('div');
             instructionsDiv.style.position = 'fixed';
             instructionsDiv.style.top = '20%';
-            instructionsDiv.style.left = '10%';
+            instructionsDiv.style.left = '20%';
             instructionsDiv.style.backgroundColor = '#fff';
             instructionsDiv.style.padding = '20px';
             instructionsDiv.style.borderRadius = '8px';
             instructionsDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+            instructionsDiv.style.zIndex = '10'; 
             instructionsDiv.innerHTML = instructions;
 
             document.body.appendChild(instructionsDiv);
