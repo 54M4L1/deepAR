@@ -130,7 +130,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addBtn.addEventListener('click', async () => {
         // تحقق من النظام iOS
         if (navigator.userAgent.includes('iPhone') && !window.matchMedia('(display-mode: standalone)').matches) {
-            alert("لإضافة هذا الموقع إلى الشاشة الرئيسية، افتح قائمة المشاركة في Safari واختر 'Add to Home Screen'.");
+            alert("لتحميل التطبيق، افتح قائمة المشاركة في Safari واختر 'Add to Home Screen'.");
         }
 
         if (deferredPrompt) {
