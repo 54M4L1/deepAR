@@ -132,9 +132,10 @@ window.addEventListener('beforeinstallprompt', (e) => {
         if (navigator.userAgent.includes('iPhone') && !window.matchMedia('(display-mode: standalone)').matches) {
             // إظهار نافذة منبثقة مع تعليمات واضحة تتضمن صورة رمز المشاركة
             const instructions = `
-                <h3>كيفية تحميل تطبيق DeepSinker على آيفون:</h3>
+                <h3>أنت تستخدم آيفون, لتحميل تطبيق DeepSinker اتبع الخطوات التالية:</h3>
                 <ol>
                     <li>اضغط على زر <strong>المشاركة</strong> في أسفل الشاشة. </li>
+                      <span>: </span>
                     <li> <img src="iosbtn.webp" alt="رمز المشاركة" style="max-width: 50px; height: auto; vertical-align: middle;"> </li>
                     <li>ثم اختر <strong>'Add to Home Screen'</strong> من القائمة .</li>
                 </ol>
