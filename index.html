@@ -119,7 +119,7 @@ console.log("%cWhat Are you doing here? ",
         
 </script>
         <script>
-           let deferredPrompt;
+      let deferredPrompt;
 const addBtn = document.getElementById('add-to-home-screen');
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -128,6 +128,11 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addBtn.style.display = 'block'; // إظهار الزر عند توفر الحدث
 
     addBtn.addEventListener('click', async () => {
+        // تحقق من النظام iOS
+        if (navigator.userAgent.includes('iPhone') && !window.matchMedia('(display-mode: standalone)').matches) {
+            alert("لإضافة هذا الموقع إلى الشاشة الرئيسية، افتح قائمة المشاركة في Safari واختر 'Add to Home Screen'.");
+        }
+
         if (deferredPrompt) {
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
@@ -137,12 +142,13 @@ window.addEventListener('beforeinstallprompt', (e) => {
             } else {
                 console.log('تم رفض التثبيت ❌');
             }
-            
+
             deferredPrompt = null;
             addBtn.style.display = 'none'; // إخفاء الزر بعد التفاعل
         }
     });
 });
+
 
 
         </script>
